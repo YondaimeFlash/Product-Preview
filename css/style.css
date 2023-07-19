@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap');
+
+:root {
+
+  --pcolor-darkcyan:hsl(158, 36%, 37%); 
+  --pcolor-darker:hsl(158, 36%, 20%);
+  --pcolor-cream:hsl(30, 38%, 92%);
+  --ncolor-darkblue:hsl(212, 21%, 14%);
+  --ncolor-greyblue:hsl(228, 12%, 48%);
+  --ncolor-white:hsl(0, 0%, 100%);
+
+
+  --color-bg:var(--pcolor-cream);
+  --color-button: var(--pcolor-darkcyan);
+
+  --ff-accent: "Fraunces", serif;
+  --ff-base: "Montserrat", sans-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;  
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  background-color: var(--color-bg);
+  font-size: 0.875rem;
+  color: var(--ncolor-greyblue);
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  margin: 1rem;
+}
+img, picture {
+  display: block;
+  max-width: 100%;
+  }
+.card-values {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.product {
+  display: grid;
+  background-color: var(--ncolor-white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 600px;
+}
+.card {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+.category {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+}
+.title {
+  font-size: 2rem;
+  font-family: var(--ff-accent);
+  color: var(--ncolor-darkblue);
+}
+.price {
+  font-size: 2rem;
+  font-family: var(--ff-accent);
+  color: var(--pcolor-darkcyan);
+}
+
+/* Button */
+.button {
+  background-color: var(--color-button);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: var(--fw-bold);
+  font-size: 1rem;
+}
+.button:is(:hover, :focus) {
+  background-color: var(--pcolor-darker);
+}
+.button[data-icon="shopping-cart"]::before {
+content: "";
+width: 15px;
+height: 16px;
+background-image: url(/images/icon-cart.svg);
+}
+@media (min-width: 600px) {
+  .product {
+    padding: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
